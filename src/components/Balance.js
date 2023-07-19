@@ -3,17 +3,23 @@ import { GlobalContext } from '../context/GlobalState'
 
 const Balance = () => {
   const {transactions} = useContext(GlobalContext);
-  // const [balance, setBalance] = useState(0);
+  const [balance, setBalance] = useState(0);
 
-  // useEffect(()=>{
-  //   const amounts = transactions.map((transaction) => transaction.amounts)
-  //   console.log('amounts', amounts)
-  // },[])
-
+  useEffect(()=>{
+    console.log('transactions',transactions)
+    const amounts = transactions.map((transaction) => transaction.amount)
+    console.log('amounts', amounts)
+    const totalAmount = amounts
+      .reduce((acc,item) => (acc + item), 0)
+      .toFixed(2);
+      console.log("totalAmount",totalAmount)
+      setBalance(totalAmount)
+  },[transactions])
 
   return(
     <div>
-      Balance
+      <h4>Your Balance</h4>
+      <h2 id='balance'>${balance}</h2>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 const Header = () => {
   return(
     <div>
-      Header
+      Your Personal Finance Journal
     </div>
   )
 }

@@ -5,15 +5,16 @@ export default (state, action) => {
         //keep the rest of the state
         ...state,
         //only change the transaction
-        transation: state.transation.filter(
-          (transation) => transation.id !== action.payload
+        transations: state.transactions.filter(
+          (transaction) => transaction.id !== action.payload
         )
-      }
+      };
     case "ADD_TRANSACTION":
+      // console.log("trigger")
       return {
         ...state,
-        transation:[action.playload, ...state.transation]
-      }
+        transactions: [action.payload, ...state.transactions]
+      };
     default:
       return state;
   }

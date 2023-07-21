@@ -21,27 +21,29 @@ const AddTransaction = () => {
 
   return(
     <div>
-      <h3>Add new transaction</h3>
+      <h3 className="border-b-2 mb-2 pb-2 font-medium">Add new transaction</h3>
       <form onSubmit={onSubmit}>
-        <div>
+        <div className="flex flex-col font-medium my-2">
           <label>Text:</label>
             <input 
+              className="h-8 shadow-md px-2"
               type='text'
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder='Enter text...'
             />
         </div>  
-        <div>
+        <div className="flex flex-col font-medium">
           <label>Amount:</label>
             <input 
+              className="h-8 shadow-md px-2"
               type='text'
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               placeholder='Enter amount...'
             />
         </div>   
-        <button className="border">Add transaction</button>
+        <button className="bg-purple-400 w-full h-9 shadow-md mt-5">Add transaction</button>
       </form>
     </div>
   )

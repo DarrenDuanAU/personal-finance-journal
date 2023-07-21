@@ -8,21 +8,21 @@ const Transaction = ({
   const { deleteTransaction } = useContext(GlobalContext)
   
   return(
-   <li className="flex">
-    <div className="flex bg-red-400">
-      <button 
-        className="p-2 bg-slate-400 border rounded"
-        onClick={() => deleteTransaction(transaction.id)}
-      > X </button>
-      <div>
-        {transaction.id}
+   <div className="flex">
+    <button 
+      className="px-2 bg-slate-400 my-1"
+      onClick={() => deleteTransaction(transaction.id)}
+    > X </button>
+  <li className={( sign == '-'? "border-red-500 " :"border-green-500 " ) + "bg-white flex flex-row w-full justify-between items-center p-1 m-1 border-r-4 shadow-md"}>
+      <div >
         {transaction.text}
       </div>
       <div>
         {sign}${Math.abs(transaction.amount)}
       </div>
-    </div>
    </li>
+   </div> 
+   
   )
 }
 export default Transaction;

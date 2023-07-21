@@ -28,13 +28,16 @@ const IncomeExpenses = () => {
   },[transactions])
 
   return(
-    <div>
-      <h4>your income & expense</h4>
-      <div className="flex" >
-        <h2 className="mx-2">{money.income}</h2>
-        <p className="mx-2">{money.expense}</p>
+    <div className="bg-white p-3 my-3 shadow-xl flex flex-row items-center justify-center" >
+      <div className="text-center font-medium  px-6 py-3 border-r-2">
+        <p>INCOME</p>
+        <p className="text-xl text-green-500">${money.income}</p>
       </div>
-    </div>
+      <div className=" text-center font-medium  px-6 py-3">
+        <p>EXPENSE</p>
+        <p className="text-xl text-red-500">${money.expense}</p>
+      </div>
+    </div>  
   )
 }
 export default IncomeExpenses;

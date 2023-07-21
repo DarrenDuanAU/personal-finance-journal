@@ -18,8 +18,8 @@ const Balance = () => {
 
   return(
     <div>
-      <h4>Your Balance</h4>
-      <h2 id='balance'>${balance}</h2>
+      <h4 className="text-sm font-medium mb-2">YOUR BALANCE</h4>
+      <h2 className='text-2xl font-medium' id='balance'>${balance}</h2>
     </div>
   )
 }
